@@ -1,7 +1,3 @@
-Got it! Here's the refined and **final README** based on your GitHub repository **[https://github.com/Vivek-1499/Blog-Website](https://github.com/Vivek-1499/Blog-Website)** and the instruction to use `nodemon ejs` for running the project in development mode:
-
----
-
 # Blog Website
 
 A full-stack blog application built with **Node.js**, **Express.js**, **MongoDB**, and **EJS** templating engine. This blog platform provides complete **CRUD** (Create, Read, Update, Delete) functionality for managing blog posts, with a **clean, responsive design**.
