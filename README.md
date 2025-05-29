@@ -148,7 +148,7 @@ Blog-Website/
 
 ### Blog Detail Page
 
-![Detail Page](public/images/image2.png)
+![Detail Page](public/images/imag2.png)
 *Read full blog posts with complete content and metadata.*
 
 ### Create Post Page
