@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
+require('dotenv').config();
 
-const dbURI = 'mongodb+srv://vivek:Vivek%407986@blog.pq3vmwy.mongodb.net/blog?retryWrites=true&w=majority&appName=Blog'; //@ is %40
+const dbURI = process.env.DB_URI;
 mongoose.connect(dbURI)
     .then((result)=> app.listen(3000)) //listening to port 3000 after connection to db is successful
     .catch((err) => console.log(err));

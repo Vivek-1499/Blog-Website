@@ -1,0 +1,166 @@
+# Blog Website
+
+A full-stack blog application built with Node.js, Express, MongoDB, and EJS templating engine. This blog platform provides complete CRUD (Create, Read, Update, Delete) functionality for managing blog posts with a clean, responsive design.
+
+## Features
+
+- **Create**: Write and publish new blog posts with title, content, and automatic timestamps
+- **Read**: Browse all blog posts on the homepage and view individual posts in detail
+- **Update**: Edit existing blog posts with pre-filled forms
+- **Delete**: Remove blog posts with confirmation
+- **Responsive Design**: Mobile-friendly interface that works across all devices
+- **Navigation**: Clean navigation between pages
+- **404 Error Handling**: Custom not-found page for better user experience
+- **About Page**: Static page for blog information
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB Atlas account or local MongoDB installation
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repository-url>
+   cd Blog-Website
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   
+   Create a `.env` file in the root directory:
+   ```env
+   DB_URI=your_mongodb_connection_string_here
+   PORT=3000
+   ```
+
+### MongoDB Setup
+
+To get your MongoDB connection string:
+
+1. **Create MongoDB Atlas Account**
+   - Go to [MongoDB Atlas](https://www.mongodb.com/atlas)
+   - Sign up for a free account
+
+2. **Create a Cluster**
+   - Click "Create a New Cluster"
+   - Choose the free tier (M0 Sandbox)
+   - Select your preferred region
+
+3. **Set up Database Access**
+   - Go to "Database Access" in the left sidebar
+   - Click "Add New Database User"
+   - Create a username and password
+   - Grant "Read and write to any database" privileges
+
+4. **Set up Network Access**
+   - Go to "Network Access" in the left sidebar
+   - Click "Add IP Address"
+   - Choose "Allow Access from Anywhere" (0.0.0.0/0) for development
+
+5. **Get Connection String**
+   - Go to "Clusters" and click "Connect"
+   - Choose "Connect your application"
+   - Copy the connection string
+   - Replace `<password>` with your database user password
+   - Replace `<dbname>` with your desired database name
+
+   Example:
+   ```
+   mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/blogdb?retryWrites=true&w=majority
+   ```
+
+### Running the Application
+
+```bash
+npm start
+# or for development with auto-restart
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`
+
+## Project Structure
+
+```
+Blog-Website/
+├── public/                 # Static assets
+│   ├── styles.css         # Main stylesheet with responsive design
+│   └── images/            # Blog images and assets
+├── files/                 # EJS template files
+│   ├── partials/          # Reusable template components
+│   │   ├── header.ejs     # Common HTML head and header
+│   │   ├── footer.ejs     # Footer with closing tags
+│   │   └── nav.ejs        # Navigation menu component
+│   ├── index.ejs          # Homepage - displays all blogs
+│   ├── create.ejs         # Create new blog post form
+│   ├── details.ejs        # Individual blog post display
+│   ├── about.ejs          # About page content
+│   └── notfound.ejs       # Custom 404 error page
+├── routes/
+│   └── blogRoutes.js      # Express routes for blog operations
+├── models/
+│   └── blog.js            # Mongoose schema for blog posts
+├── controllers/
+│   └── blogController.js  # Business logic for route handlers
+├── .env                   # Environment variables
+├── .gitignore            # Git ignore file
+├── ejs.js                # Main application server file
+├── package.json          # Project dependencies and scripts
+└── README.md             # Project documentation
+```
+
+## API Routes
+
+- `GET /` - Homepage with all blog posts
+- `GET /about` - About page
+- `GET /blogs/create` - Create new blog form
+- `POST /blogs` - Submit new blog post
+- `GET /blogs/:id` - View individual blog post
+- `DELETE /blogs/:id` - Delete blog post
+
+## Screenshots
+
+### Home Page
+![Home Page](public/images/image1.png)
+*Browse all blog posts with titles, snippets, and publication dates*
+
+### Blog Detail Page
+![Detail Page](public/images/imag2.png) 
+*Read full blog posts with complete content and metadata*
+
+### Create Post Page
+![Create Page](public/images/image3.png)
+*Write and publish new blog posts with a clean editor interface*
+
+## Technologies Used
+
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB with Mongoose ODM
+- **Templating**: EJS (Embedded JavaScript)
+- **Styling**: CSS3 with responsive design
+- **Environment**: dotenv for configuration
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Create a Pull Request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Support
+
+If you encounter any issues or have questions, please create an issue in the repository or contact the maintainer.
